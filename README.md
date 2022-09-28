@@ -8,7 +8,12 @@ History file path: `$HISTFILE=${HOME}/.zsh_history`
 
 ## Prerequisites
 
-### [Homebrew](https://brew.sh):
+### Xcode Command Line Tools:
+`
+xcode-select –install
+`
+
+### Homebrew:
 `
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 `
