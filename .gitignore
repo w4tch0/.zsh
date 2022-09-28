@@ -1,6 +1,7 @@
 zim/
 .zsh_sessions/
 .zsh_history
+.zhistory
 .zcompcache/
 .zcompdump
 .zcompdump.zwc

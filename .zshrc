@@ -1,3 +1,5 @@
+# .zshrc
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -5,13 +7,15 @@ if [[ -r "${HOME}/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${HOME}/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# If cache directory structure is missing, create it.
-if [[ ! -d "${HOME}/.cache/zsh" ]]; then
-  mkdir -p "${HOME}/.cache/zsh"
+# If cache directory is missing, create it.
+if [[ ! -d "${HOME}/.cache" ]]; then
+  mkdir "${HOME}/.cache"
 fi
 
+# Keep zsh history in user home.
+export HISTFILE="${HOME}/.zsh_history"
+
 # Variables.
-export HISTFILE="${HOME}/.cache/zsh/zsh_history"
 export EDITOR="/usr/bin/vim"
 export VISUAL="/usr/bin/vim"
 export PAGER="/usr/bin/less"
@@ -33,11 +37,11 @@ export PATH="/usr/local/opt/fzf/bin:$PATH"
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 
-# Set zstyle options
+# Set zstyle options.
 zstyle ':zim:zmodule' use 'degit'
 #zstyle ':zim:input' double-dot-expand yes
-zstyle ':zim:completion' dumpfile ${HOME}/.cache/zsh/zcompdump
-zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zsh/zcompcache
+zstyle ':zim:completion' dumpfile ${HOME}/.cache/zcompdump
+zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zcompcache
 #zstyle ':zim' disable-version-check yes
 
 # Initialize zimfw modules.

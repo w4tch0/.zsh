@@ -4,7 +4,7 @@ My zsh shell setup for MacOS using [zim:fw](https://github.com/zimfw/zimfw) fram
 
 Installation path: `$ZDOTDIR=${HOME}/.zsh/`
 
-History file path: `$HISTFILE=${HOME}/.cache/zsh/zsh_history`
+History file path: `$HISTFILE=${HOME}/.zsh_history`
 
 ## Prerequisites
 
