@@ -1,0 +1,44 @@
+# .zimrc:
+# - module configuartion used by zim framework plugin manager
+# - not sourced during shell start up
+# - module order matters
+
+# Sets sane zsh built-in environment options
+zmodule environment
+
+# Applies correct bindkeys for input events
+zmodule input
+
+# Sets a custom terminal title
+zmodule termtitle
+
+# Configures fzf to use fd and bat
+zmodule fzf
+
+# Utility aliases, functions and colors
+zmodule utility
+
+# Prompt theme
+# - to customize run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh
+zmodule romkatv/powerlevel10k 
+
+# Additional completion definitions for zsh
+# - must be sourced before completion
+zmodule zsh-users/zsh-completions --fpath src
+
+# Enables and configures smart and extensive tab completion
+# - must be sourced after all modules that add completion definitions
+zmodule completion
+
+# Fish-like syntax highlighting for zsh
+# - must be sourced after completion
+zmodule zsh-users/zsh-syntax-highlighting
+
+# Fish-like history search for zsh
+# - must be sourced after syntax highlighting
+zmodule zsh-users/zsh-history-substring-search
+
+# Fish-like autosuggestions for zsh
+# - must be sourced after syntax highlighting and history substring search
+zmodule zsh-users/zsh-autosuggestions
+
