@@ -4,4 +4,6 @@ zim/
 .zhistory
 .zcompcache/
 .zcompdump
-.zcompdump.zwc
+*.zwc
+*.zwc.old
+*.swp
