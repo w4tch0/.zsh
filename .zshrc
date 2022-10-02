@@ -21,6 +21,13 @@ export VISUAL="/usr/bin/vim"
 export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/open"
 
+# Set zstyle options.
+zstyle ':zim:zmodule' use 'degit'
+#zstyle ':zim:input' double-dot-expand yes
+zstyle ':zim:completion' dumpfile ${HOME}/.cache/zcompdump
+zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zcompcache
+#zstyle ':zim' disable-version-check yes
+
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
@@ -36,13 +43,6 @@ fi
 export PATH="/usr/local/opt/fzf/bin:$PATH"
 [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-
-# Set zstyle options.
-zstyle ':zim:zmodule' use 'degit'
-#zstyle ':zim:input' double-dot-expand yes
-zstyle ':zim:completion' dumpfile ${HOME}/.cache/zcompdump
-zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zcompcache
-#zstyle ':zim' disable-version-check yes
 
 # Initialize zimfw modules.
 source ${ZIM_HOME}/init.zsh
