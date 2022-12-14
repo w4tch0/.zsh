@@ -10,7 +10,7 @@ History file path: `$HISTFILE=${HOME}/.zsh_history`
 
 ### Xcode Command Line Tools:
 `
-xcode-select –install
+xcode-select -–install
 `
 
 ### Homebrew:
