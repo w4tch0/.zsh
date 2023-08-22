@@ -40,9 +40,9 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR}/.zimrc ]]; then
 fi
 
 # Setup FZF completion and keybindings.
-export PATH="/usr/local/opt/fzf/bin:$PATH"
-[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+export PATH="/opt/homebrew/opt/fzf/bin:$PATH"
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 # Initialize zimfw modules.
 source ${ZIM_HOME}/init.zsh
@@ -61,3 +61,6 @@ fi
 # Powerlevel10k theme.
 # To customize prompt, run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
+
+# Setup brew environment:
+eval "$(/opt/homebrew/bin/brew shellenv)"
