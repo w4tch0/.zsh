@@ -21,9 +21,12 @@ export VISUAL="/usr/bin/vim"
 export PAGER="/usr/bin/less"
 export BROWSER="/usr/bin/open"
 
+# Setup brew environment:
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Set zstyle options.
 zstyle ':zim:zmodule' use 'degit'
-#zstyle ':zim:input' double-dot-expand yes
+zstyle ':zim:input' double-dot-expand yes
 zstyle ':zim:completion' dumpfile ${HOME}/.cache/zcompdump
 zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zcompcache
 #zstyle ':zim' disable-version-check yes
@@ -40,7 +43,6 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR}/.zimrc ]]; then
 fi
 
 # Setup FZF completion and keybindings.
-export PATH="/opt/homebrew/opt/fzf/bin:$PATH"
 [[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
@@ -53,6 +55,7 @@ ssh -p $1 localhost
 }
 
 # Use python environment set by pyenv.
+PYENV_ROOT="${HOME}/.pyenv"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
@@ -61,6 +64,3 @@ fi
 # Powerlevel10k theme.
 # To customize prompt, run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
-
-# Setup brew environment:
-eval "$(/opt/homebrew/bin/brew shellenv)"
