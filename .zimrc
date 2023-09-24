@@ -19,6 +19,9 @@ zmodule fzf
 # Utility aliases, functions and colors.
 zmodule utility
 
+# Figures out where to get the best help, and gets it.
+zmodule run-help
+
 # Prompt theme.
 # To customize run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
 zmodule romkatv/powerlevel10k 
@@ -26,6 +29,10 @@ zmodule romkatv/powerlevel10k
 # Additional completion definitions for zsh.
 # Must be sourced before completion.
 zmodule zsh-users/zsh-completions --fpath src
+
+# Brew completion modules.
+# Must be sourced before completion.
+zmodule /opt/homebrew/share/zsh --fpath site-functions
 
 # Enables and configures smart and extensive tab completion.
 # Must be sourced after all modules that add completion definitions.
