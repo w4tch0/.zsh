@@ -7,3 +7,4 @@ zim/
 *.zwc
 *.zwc.old
 *.swp
+.DS_Store

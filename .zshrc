@@ -49,17 +49,17 @@ source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 # Initialize zimfw modules.
 source ${ZIM_HOME}/init.zsh
 
-# Agora function.
-alg () {
-ssh -p $1 localhost
-}
-
 # Use python environment set by pyenv.
 PYENV_ROOT="${HOME}/.pyenv"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
 fi
+
+# Sourcing work functions here:
+if [[ -f ${HOME}/Tools/scripts/aws_saml.sh ]] ; then . ${HOME}/Tools/scripts/aws_saml.sh ; fi
+if [[ -f ${HOME}/Tools/scripts/rds_wrapper.sh ]] ; then . ${HOME}/Tools/scripts/rds_wrapper.sh ; fi
+if [[ -f ${HOME}/Tools/scripts/misc.sh ]] ; then . ${HOME}/Tools/scripts/misc.sh ; fi
 
 # Powerlevel10k theme.
 # To customize prompt, run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
