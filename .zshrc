@@ -56,12 +56,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-# Sourcing work functions here:
-if [[ -f ${HOME}/Tools/scripts/variables.sh ]] ; then source ${HOME}/Tools/scripts/variables.sh ; fi      # Common variables
-if [[ -f ${HOME}/Tools/scripts/keychain.sh ]] ; then source ${HOME}/Tools/scripts/keychain.sh ; fi        # Keychain and KeepassXC functions
-if [[ -f ${HOME}/Tools/scripts/aws_saml.sh ]] ; then source ${HOME}/Tools/scripts/aws_saml.sh ; fi        # AWS SAML and AWS CLI functions
-if [[ -f ${HOME}/Tools/scripts/rds_wrapper.sh ]] ; then source ${HOME}/Tools/scripts/rds_wrapper.sh ; fi  # AWS RDS functions
-if [[ -f ${HOME}/Tools/scripts/misc.sh ]] ; then source ${HOME}/Tools/scripts/misc.sh ; fi                # Misc ED functions
+# Sourcing work related functions here:
+if [[ -f ${HOME}/Tools/AWS_tools/aws_functions.zsh ]] ; then source ${HOME}/Tools/AWS_tools/aws_functions.zsh ; fi  # AWS CLI wrapper functions
+if [[ -f ${HOME}/Tools/scripts/ed.zsh ]] ; then source ${HOME}/Tools/scripts/ed.zsh ; fi                            # Misc ED functions
 
 # Powerlevel10k theme.
 # To customize prompt, run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
