@@ -34,7 +34,7 @@ zstyle ':completion::complete:*' cache-path ${HOME}/.cache/zcompcache
 # Download zimfw plugin manager if missing.
 if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
   curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
-      https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+    https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
 fi
 
 # Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
@@ -43,7 +43,7 @@ if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR}/.zimrc ]]; then
 fi
 
 # Setup FZF completion and keybindings.
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2>/dev/null
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
 
 # Initialize zimfw modules.
@@ -57,8 +57,8 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Sourcing work related functions here:
-if [[ -f ${HOME}/Tools/AWS_tools/aws_functions.zsh ]] ; then source ${HOME}/Tools/AWS_tools/aws_functions.zsh ; fi  # AWS CLI wrapper functions
-if [[ -f ${HOME}/Tools/scripts/ed.zsh ]] ; then source ${HOME}/Tools/scripts/ed.zsh ; fi                            # Misc ED functions
+if [[ -f ${HOME}/Tools/AWS_tools/aws_functions.zsh ]]; then source ${HOME}/Tools/AWS_tools/aws_functions.zsh; fi # AWS CLI wrapper functions
+if [[ -f ${HOME}/Tools/scripts/ed.zsh ]]; then source ${HOME}/Tools/scripts/ed.zsh; fi                           # Misc ED functions
 
 alias aws2='/opt/homebrew/bin/aws'
 
