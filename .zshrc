@@ -60,6 +60,8 @@ fi
 if [[ -f ${HOME}/Tools/AWS_tools/aws_functions.zsh ]] ; then source ${HOME}/Tools/AWS_tools/aws_functions.zsh ; fi  # AWS CLI wrapper functions
 if [[ -f ${HOME}/Tools/scripts/ed.zsh ]] ; then source ${HOME}/Tools/scripts/ed.zsh ; fi                            # Misc ED functions
 
+alias aws2='/opt/homebrew/bin/aws'
+
 # Powerlevel10k theme.
 # To customize prompt, run `p10k configure` or edit ${ZDOTDIR}/.p10k.zsh.
 [[ ! -f ${ZDOTDIR}/.p10k.zsh ]] || source ${ZDOTDIR}/.p10k.zsh
